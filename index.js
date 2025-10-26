@@ -1,43 +1,28 @@
-// console.log(`Hello world`);
-// console.log(`I like pizza`);
+// If statements = if a condition is true, execute some code 
+// if not, do something else
 
-// window.alert(`This is an alert!`);
+const myText = document.getElementById("myText");
+const mySubmit = document.getElementById("mySubmit");
+const resultElement = document.getElementById("resultElement");
+let age;
+ 
+mySubmit.onclick = function(){
+    age = myText.value;
+    // age = Number(age);
 
-// let fullName = "Lokesh";
-// let age = 21;
-// let isStudent = false;
-
-// document.getElementById("myH1").textContent = `Hello`;
-// document.getElementById("p1").textContent = `Your name is ${fullName}`;
-// document.getElementById("p2").textContent = `Your age is ${age}`;
-// document.getElementById("p3").textContent = `You are student: ${isStudent}`;
-
-// let result = 1 +2*3+4 **3;
-// console.log(result);
-// let username;
-// username = window.prompt("What's your username?");
-// console.log(username);
-
-
-
-// let username;
-// document.getElementById("mySubmit").onclick = function(){
-//     username = document.getElementById("myText").value;
-//     document.getElementById("myH1").textContent = `Hello ${username}`;
-// }
-
-let PI = 3.1415;
-let radius;
-let circumference;
-
-radius = Number(radius);
-
-
-document.getElementById("mySubmit").onclick = function(){
-    radius= document.getElementById("myText").value ;
-    radius = Number(radius);
-    circumference = 2*PI*radius;
-    document.getElementById("myH3").textContent= circumference+"cm";
-    
+    if(age>=100){
+        resultElement.textContent="You are Too Old to enter this site";
+    }
+    else if(age ==0){
+        resultElement.textContent="You can't enter, you were just born";
+    }
+    else if(age >=18){
+        resultElement.textContent="You are old enough to enter this site";
+    }
+    else if(age <0){
+        resultElement.textContent="Your age can't be below 0";
+    }
+    else{
+        resultElement.textContent="You must be 18+ to enter this site";
+    }
 }
-
